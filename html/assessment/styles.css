@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #a1a1a1;
+    background-color: #7a7a7a;
     margin: 0;
     padding: 0;
     color: #333;
@@ -9,7 +9,7 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
-    background-color: #ff0000;
+    background-color: #000000;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
