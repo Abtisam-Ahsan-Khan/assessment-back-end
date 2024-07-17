@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
-    <title>Classes</title>
+    <title>Classes - Rishton Academy School</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -16,9 +16,8 @@
             </tr>
             <?php
             include 'db.php';
-//The INNER JOIN between Class and Teacher makes sure that only classes with a valid teacher id are selected
-//The LEFT JOIN with TeacherAssistant makes sure that if a class doesn't have an assistant, it will still be included in the results with a NULL value for Name.
-//left join from youtube and guest lecture (https://youtu.be/giKwmtsz1U8?si=aN-4BIFZuqaQ96zn).
+//The INNER JOIN between Class and Teacher ensures that only classes with a valid TeacherID are selected.
+//The LEFT JOIN with TeacherAssistant ensures that if a class doesn't have an assistant, it will still be included in the results with a NULL value for AssistantName.
 
             $sql = "SELECT Class.ClassID, Class.ClassName, Teacher.TeacherName, TeacherAssistant.AssistantName 
                     FROM Class 

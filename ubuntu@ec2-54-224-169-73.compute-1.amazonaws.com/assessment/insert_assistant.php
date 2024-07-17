@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Insert Assistant</title>
+    <title>Insert Assistant - Rishton Academy School</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Insert Teacher Assistant</h1>
+        <h2>Insert Assistant</h2>
         <form action="insert_assistant.php" method="get">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -27,7 +27,7 @@
         </form>
 
         <?php
-        if ($_GET) {
+        if ($_SERVER["REQUEST_METHOD"] == "GET" && !empty($_GET)) {
             include 'db.php';
 
             $name = $_GET['name'];
@@ -36,15 +36,14 @@
             $annual_salary = $_GET['annual_salary'];
             $background_check = $_GET['background_check'];
 
-            $sql = "INSERT INTO TeacherAssistant (AssistantName, Address, Phone, AnnualSalary, BackgroundCheck) 
+            $sql = "INSERT INTO TeacherAssistant (AssistantName, Address, Phone, AnnualSalary, BackgroundCheck)
                     VALUES ('$name', '$address', '$phone', '$annual_salary', '$background_check')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "New assistant inserted successfully";
+                echo "<p>New assistant inserted successfully</p>";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "<p>Error: " . $sql . "<br>" . $conn->error . "</p>";
             }
-
             $conn->close();
         }
         ?>

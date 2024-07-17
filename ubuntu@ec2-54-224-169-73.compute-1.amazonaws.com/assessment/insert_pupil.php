@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
     <title>Insert Pupil</title>
     <link rel="stylesheet" type="text/css" href="styles.css">

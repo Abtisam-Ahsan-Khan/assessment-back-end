@@ -1,3 +1,4 @@
+<?php
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
         <?php
         include 'db.php';
 
-        // FOR Pupils 
+        // Pupils Section - Delete Handling
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['delete_pupil_id'])) {
             $delete_id = $_GET['delete_pupil_id'];
             $delete_sql = "DELETE FROM Pupil WHERE PupilID = '$delete_id'";
@@ -20,7 +21,8 @@
                 echo "<p>Error deleting record: " . $conn->error . "</p>";
             }
         }
-   
+        
+        // Display Pupils Table
         $result = $conn->query("SELECT * FROM Pupil");
         if ($result->num_rows > 0) {
             echo "<table><tr><th>ID</th><th>Name</th><th>Address</th><th>Medical Info</th><th>Class ID</th><th>Actions</th></tr>";
@@ -47,7 +49,7 @@
         
         <h2>Teachers</h2>
         <?php
-        // FOR Teachers 
+        // Teachers Section - Delete Handling
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['delete_teacher_id'])) {
             $delete_id = $_GET['delete_teacher_id'];
             $delete_sql = "DELETE FROM Teacher WHERE TeacherID = '$delete_id'";
@@ -57,7 +59,8 @@
                 echo "<p>Error deleting record: " . $conn->error . "</p>";
             }
         }
-  
+        
+        // Display Teachers Table
         $result = $conn->query("SELECT * FROM Teacher");
         if ($result->num_rows > 0) {
             echo "<table><tr><th>ID</th><th>Name</th><th>Address</th><th>Phone</th><th>Annual Salary</th><th>Background Check</th><th>Actions</th></tr>";
@@ -85,7 +88,7 @@
         
         <h2>Parents</h2>
         <?php
-        // FOR Parents 
+        // Parents Section - Delete Handling
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['delete_parent_id'])) {
             $delete_id = $_GET['delete_parent_id'];
             $delete_sql = "DELETE FROM ParentGuardian WHERE ParentID = '$delete_id'";
@@ -95,7 +98,8 @@
                 echo "<p>Error deleting record: " . $conn->error . "</p>";
             }
         }
-
+        
+        // Display Parents Table
         $result = $conn->query("SELECT * FROM ParentGuardian");
         if ($result->num_rows > 0) {
             echo "<table><tr><th>ID</th><th>Name</th><th>Address</th><th>Email</th><th>Phone</th><th>Actions</th></tr>";
@@ -122,7 +126,7 @@
         
         <h2>Assistants</h2>
         <?php
-        // FOR Assistants
+        // Assistants Section - Delete Handling
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['delete_assistant_id'])) {
             $delete_id = $_GET['delete_assistant_id'];
             $delete_sql = "DELETE FROM TeacherAssistant WHERE AssistantID = '$delete_id'";
@@ -133,6 +137,7 @@
             }
         }
         
+        // Display Assistants Table
         $result = $conn->query("SELECT * FROM TeacherAssistant");
         if ($result->num_rows > 0) {
             echo "<table><tr><th>ID</th><th>Name</th><th>Address</th><th>Phone</th><th>Annual Salary</th><th>Background Check</th><th>Actions</th></tr>";
