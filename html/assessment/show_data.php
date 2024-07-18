@@ -9,7 +9,7 @@
         <h2>Pupils</h2>
         <?php
         include 'db.php';
-
+        // help from youtube at https://youtu.be/Ydogcs6ImLw?si=OQp_H4a4osXF1u_d.
         // FOR Pupils 
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['delete_pupil_id'])) {
             $delete_id = $_GET['delete_pupil_id'];
